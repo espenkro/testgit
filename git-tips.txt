@@ -1,0 +1,11 @@
+git add
+git commit
+git status
+git branch
+git pull
+git push
+git checkout
+git diff
+git whatchanged -p
+git remote
+git clone
