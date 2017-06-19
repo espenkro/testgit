@@ -9,3 +9,8 @@ git diff
 git whatchanged -p
 git remote
 git clone
+
+git rm file
+
+GitHub (Sync)
+Endringer i Master må godkjennes i GitHub (sign in)
