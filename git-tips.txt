@@ -4,13 +4,25 @@ git status
 git branch
 git pull
 git push
+git stash save      (message skal gå an og muligens --date=local )
 git checkout
 git diff
+git diff --name-only SHA1 SHA2  (mindre søppel..)
 git whatchanged -p
 git remote
 git clone
-
 git rm file
+git diff shows unstaged changes.
+git diff --cached shows staged changes.
+git diff HEAD shows all changes (both staged and unstaged).
+git stash list --date-local (med datoer/tid, uten id)
+git stash list --pretty  - mer info
+git stash list --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)"
+Viser stash liste med id og tid
+
+git reflog --date=local  (viser historie av head's/id med dato/tid)
+Historie ligger også i \git\log\refs\heads\filnavn
+
 
 GitHub (Sync)
 Endringer i Master må godkjennes i GitHub (sign in)
