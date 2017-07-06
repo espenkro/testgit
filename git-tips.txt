@@ -3,29 +3,29 @@ for å konfigurere ssh sertifikat problemer
 
 git init
 git remote
-git clone https://.... (klone/last ned repository)
-git remote -v  viser remote branches (-v gir url i stedet for branch name)
-git branch   (viser branch)
-git branch -r  (show all branches)
-git branch -v -a (show branches available for checkout)
-git checkout branchname
-git add
+git clone https://.... 	Klone/last ned repository)
+git remote -v  		Viser remote branches (-v gir url i stedet for branch name)
+git branch   		Viser branch
+git branch -r  		Show all branches
+git branch -v -a 	Show branches available for checkout
+git checkout branchname Skifte aktiv branch
+git add .  		Add files to commit
 git commit
-git pull (hente fra remote)
-git push (pushe til remote)
+git pull 		Hente fra remote
+git push 		Pushe til remote
 
-git status
-
-git stash save      (message skal gå an og muligens --date=local )
-git checkout
+git status  hva er endret ift. master. Hva vil skje ved commit
+git log
 git diff
-git diff --name-only SHA1 SHA2  (mindre søppel..)
+git diff --name-only SHA1 SHA2  Mindre søppel..
+git diff 		Shows unstaged changes.
+git diff --cached 	Shows staged changes.
+git diff HEAD 		Shows all changes (both staged and unstaged).
+
 git whatchanged -p
 
 git rm file
-git diff shows unstaged changes.
-git diff --cached shows staged changes.
-git diff HEAD shows all changes (both staged and unstaged).
+git stash save      (message skal gå an og muligens --date=local )
 git stash list --date-local (med datoer/tid, uten id)
 git stash list --pretty  - mer info
 git stash list --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)"
