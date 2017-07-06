@@ -1,0 +1,27 @@
+LicenseServerTests\test_script.js:    xhr.open('get', "http://localhost:31322/operators/confirmoperator?companyCode=" +
+companyCode + "&phone=" + phone + "&activationCode=" + activationCode + "&key=" + APP_KEY, true);
+
+Porter:
+C:\Elotec\LicenseServer>findstr /s /p /n /c:"31322" *.*
+LicenseServer\LicenseServer.csproj:292:          <DevelopmentServerPort>31322</DevelopmentServerPort>
+LicenseServer\LicenseServer.csproj:294:          <IISUrl>http://localhost:31322/</IISUrl>
+LicenseServer\LicenseServer.csproj:301:            <server name="SelfHostServer" exePath="" cmdArgs="" url="http://localhost:31322/" workingDir="" />
+Serverside rendering error.html:2:<!-- saved from url=(0032)http://localhost:31322/hierarchy -->
+
+C:\Elotec\LicenseServer>findstr /s /p /n /c:"44314" *.*
+LicenseServer\LicenseServer.csproj:20:    <IISExpressSSLPort>44314</IISExpressSSLPort>
+LicenseServer\LicenseServer.csproj.user:5:    <IISExpressSSLPort>44314</IISExpressSSLPort>
+
+
+Tobias:
+ <connectionStrings>
+    <add name="ElotecConnectionString" connectionString="Server=elotectestdbserver.database.windows.net; Database=ElotecTestDB; User Id=licenseperfectcow; password=@Ax$2Y\'MAMA,8ux" providerName="System.Data.SqlClient" />
+    <add name="LicenseServer" connectionString="data source=elotectestdbserver.database.windows.net;initial catalog=ElotecTestDB;user id=licenseperfectcow;password=&quot;@Ax$2Y\'MAMA,8ux&quot;;MultipleActiveResultSets=True;App=EntityFramework" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  
+    
+							<option value="" ng-selected="selected">"Select an option"</option>
+							<option value="45">+45 Denmark</option>
+							<option value="46">+46 Sweden</option>
+							<option value="47">+47 Norway</option>
+							<option value="48">+48 Poland</option>

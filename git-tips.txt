@@ -1,16 +1,27 @@
+git config --system http.sslverify false
+for å konfigurere ssh sertifikat problemer
+
+git init
+git remote
+git clone https://.... (klone/last ned repository)
+git remote -v  viser remote branches (-v gir url i stedet for branch name)
+git branch   (viser branch)
+git branch -r  (show all branches)
+git branch -v -a (show branches available for checkout)
+git checkout branchname
 git add
 git commit
+git pull (hente fra remote)
+git push (pushe til remote)
+
 git status
-git branch
-git pull
-git push
+
 git stash save      (message skal gå an og muligens --date=local )
 git checkout
 git diff
 git diff --name-only SHA1 SHA2  (mindre søppel..)
 git whatchanged -p
-git remote
-git clone
+
 git rm file
 git diff shows unstaged changes.
 git diff --cached shows staged changes.
@@ -18,7 +29,10 @@ git diff HEAD shows all changes (both staged and unstaged).
 git stash list --date-local (med datoer/tid, uten id)
 git stash list --pretty  - mer info
 git stash list --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)"
-Viser stash liste med id og tid
+Viser stash liste med id og tid siden (%ci i stedet for %cr gir dato/tid)
+
+git pop (henter tilbake siste stash). 
+Eks. merge data fra annen branch:  git stash, git checkout branch2,git pull, git pop (sjekk rekkefølgen i dette)
 
 git reflog --date=local  (viser historie av head's/id med dato/tid)
 Historie ligger også i \git\log\refs\heads\filnavn
@@ -26,3 +40,7 @@ Historie ligger også i \git\log\refs\heads\filnavn
 
 GitHub (Sync)
 Endringer i Master må godkjennes i GitHub (sign in)
+
+
+https://conceptos.visualstudio.com/DefaultCollection/_git/Elotec
+https://conceptos.visualstudio.com/DefaultCollection/_git/Elotec
