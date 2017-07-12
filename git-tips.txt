@@ -6,13 +6,22 @@ git remote
 git clone https://.... 	Klone/last ned repository)
 git remote -v  		Viser remote branches (-v gir url i stedet for branch name)
 git branch   		Viser branch
-git branch -r  		Show all branches
+git branch -r  		Show all remote branches
+git branch -a		Show all branches (remote and local)
 git branch -v -a 	Show branches available for checkout
 git checkout branchname Skifte aktiv branch
 git add .  		Add files to commit
 git commit
 git pull 		Hente fra remote
 git push 		Pushe til remote
+git push origin local-name:remote-name		Pusher fra lokal branch (local-name) til remote branch med annet navn  (origin/navn)
+git merge --squash tmp  Merges current branch with tmp. Squash assembles all commits into one. To create commit, follow by:
+git commit -m "squash tmp"
+git merge --rebase
+Rebase (alternative to merging, giving a cleaner project history). Never use it on public branches.:
+git checkout branch
+git rebase master   	Incorporates all commits in master (at the tip of the master branch). Use -i option for interactive rebase session (lists all commits)
+
 
 git status  hva er endret ift. master. Hva vil skje ved commit
 git log
@@ -21,7 +30,7 @@ git diff --name-only SHA1 SHA2  Mindre søppel..
 git diff 		Shows unstaged changes.
 git diff --cached 	Shows staged changes.
 git diff HEAD 		Shows all changes (both staged and unstaged).
-
+git show		Show changes in last commit
 git whatchanged -p
 
 git rm file
@@ -31,10 +40,12 @@ git stash list --pretty  - mer info
 git stash list --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)"
 Viser stash liste med id og tid siden (%ci i stedet for %cr gir dato/tid)
 
-git pop (henter tilbake siste stash). 
-Eks. merge data fra annen branch:  git stash, git checkout branch2,git pull, git pop (sjekk rekkefølgen i dette)
+git stash pop (henter tilbake siste stash). 
+Eks. merge data fra annen branch:  git stash, git checkout branch2, git pull, git stash pop (sjekk rekkefølgen i dette)
+Eks. lagre for å se på annen branch før man går tilbake: git stash, git checkout otherbranch, git checkout branch, git stash pop  (evt. git stash apply  for å ta vare på stash, som evt. slettes med git stash drop)
 
-git reflog --date=local  (viser historie av head's/id med dato/tid)
+git reflog --date=local  (viser historie av head's/id checkouts etc. med dato/tid)
+git reflog --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)"
 Historie ligger også i \git\log\refs\heads\filnavn
 
 

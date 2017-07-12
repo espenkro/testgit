@@ -25,3 +25,40 @@ Tobias:
 							<option value="46">+46 Sweden</option>
 							<option value="47">+47 Norway</option>
 							<option value="48">+48 Poland</option>
+
+	<!--
+					<div ng-init="CountryCodes=[{CountryCode:'+47',country:'Norway'},{CountryCode:'+46',country:'Sweeden'}]" /div>
+					<select style="margin-bottom: 2em;" type="text" placeholder="{{ ' Country Code' | translate }}" class="login-input"
+                            name="CountryCode" ng-model="loginForm.CountryCode" ng-change="formChanged()" required
+							<option value=ng-repeat="CountryCode in CountryCodes" /option>
+							/>
+	-->
+
+
+1207: kommentar
+	//navigator.globalization.getLocaleName(successCallback, errorCallback);
+	// problemer med getLocaleName   fungerer muligens bare på device?
+	/* 
+	navigator.globalization.getLocaleName(
+    function (locale) {alert('locale: ' + locale.value + '\n');},
+    function () {alert('Error getting locale\n');}
+); */
+
+	//$log.log("getLocaleName  "+$cordovaGlobalization.getLocaleName());
+	//$cordovaGlobalization.getPreferredLanguage()
+	/*$cordovaGlobalization.getLocaleName()
+            .then(function(language) {
+                // For now, only use primary language, not script or region tags (e.g. ja instead of ja-JP and es instead of es-Latn or nb instead of nb-NO or nb_NO)
+                var lang = language.value.toLowerCase();
+                var hypenIndex = language.value.indexOf('-');
+                if (hypenIndex != -1) {
+                    lang = language.value.substring(0, hypenIndex);
+                }
+                $log.log("Got preferred language: " + language.value + ", short lang: " + lang);
+                gettextCatalog.setCurrentLanguage(lang);
+            })
+            .catch(function(error) {
+                // error
+                $log.log("Error fetching globalization: " + error);
+            });
+		*/
