@@ -9,9 +9,10 @@ git branch   		Viser branch
 git branch -r  		Show all remote branches
 git branch -a		Show all branches (remote and local)
 git branch -v -a 	Show branches available for checkout
-git checkout branchname Skifte aktiv branch
+git checkout branchname Skifte aktiv branch  (-f lagrer ikke endringer siden sist commit)
 git add .  		Add files to commit
 git commit
+git commit -a  	add and commit (tar ikke med nye filer)
 git pull 		Hente fra remote
 git push 		Pushe til remote
 git push origin local-name:remote-name		Pusher fra lokal branch (local-name) til remote branch med annet navn  (origin/navn)
@@ -24,8 +25,8 @@ git rebase master   	Incorporates all commits in master (at the tip of the maste
 
 
 git status  hva er endret ift. master. Hva vil skje ved commit
-git log
-git diff
+git log -g
+git diff			NYTTIG hvis noe er blitt borte i stash e.l.
 git diff --name-only SHA1 SHA2  Mindre søppel..
 git diff 		Shows unstaged changes.
 git diff --cached 	Shows staged changes.
@@ -39,15 +40,18 @@ git stash list --date-local (med datoer/tid, uten id)
 git stash list --pretty  - mer info
 git stash list --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)"
 Viser stash liste med id og tid siden (%ci i stedet for %cr gir dato/tid)
+git stash apply 2af750cee182252a83cc0d16b0a91a94f7220337  (henter tilbake gammel/mistet stash  SHA-1 koden kan finnes med TortoseGit stash list)
 
-git stash pop (henter tilbake siste stash). 
-Eks. merge data fra annen branch:  git stash, git checkout branch2, git pull, git stash pop (sjekk rekkefølgen i dette)
+git stash apply	(henter tilbake siste stash).
+git stash pop (henter tilbake siste stash og SLETTER). 
 Eks. lagre for å se på annen branch før man går tilbake: git stash, git checkout otherbranch, git checkout branch, git stash pop  (evt. git stash apply  for å ta vare på stash, som evt. slettes med git stash drop)
+Eks. merge data fra annen branch:  git stash, git checkout branch2, git pull, git stash pop (sjekk rekkefølgen i dette)
+
 
 git reflog --date=local  (viser historie av head's/id checkouts etc. med dato/tid)
 git reflog --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cr) %C(bold blue)<%an>%C(reset)"
 Historie ligger også i \git\log\refs\heads\filnavn
-
+git reset --mixed  (lagrer, bruk denne i stedet for --hard)
 
 GitHub (Sync)
 Endringer i Master må godkjennes i GitHub (sign in)
